@@ -12,7 +12,7 @@ export default function SocialSidebar() {
       className="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-6"
     >
       <motion.a
-        href="mailto:hello@example.com"
+        href="mailto:parikhhitayu12@Gmail.com"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         className="group p-3 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#1A7B7D] hover:shadow-md transition-all duration-300 cursor-interactive"
@@ -21,7 +21,7 @@ export default function SocialSidebar() {
       </motion.a>
 
       <motion.a
-        href="https://linkedin.com"
+        href="https://www.linkedin.com/in/hitayu-parikh/"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}
@@ -34,7 +34,7 @@ export default function SocialSidebar() {
       {/* Mobile version - horizontal at bottom */}
       <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-4">
         <motion.a
-          href="mailto:hello@example.com"
+          href="mailto:parikhhitayu12@Gmail.com"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           className="group p-3 bg-white border border-gray-200 rounded-full shadow-sm hover:border-[#1A7B7D] hover:shadow-md transition-all duration-300 cursor-interactive"
@@ -43,7 +43,7 @@ export default function SocialSidebar() {
         </motion.a>
 
         <motion.a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/hitayu-parikh/"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{ scale: 1.1 }}
