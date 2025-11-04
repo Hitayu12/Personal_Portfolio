@@ -3,6 +3,7 @@ import "./globals.css";
 import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Hitayu Portfolio",
@@ -30,6 +31,7 @@ export default function RootLayout({
         />
         {children}
         <VisualEditsMessenger />
+        <Analytics />
       </body>
     </html>
   );
