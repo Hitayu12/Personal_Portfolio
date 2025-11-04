@@ -38,7 +38,7 @@ export default function AboutSection() {
             >
               <div className="relative w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-[#8B6F47]/20">
                 <Image
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/IMG_0261-1760680536031.jpg"
+                  src="/me.jpg"
                   alt="Hitayu Parikh"
                   fill
                   className="object-cover"

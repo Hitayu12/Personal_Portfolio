@@ -14,10 +14,9 @@ const projectData: Record<string, any> = {
     date: 'Oct 2025',
     tags: ['React.js', 'TailwindCSS', 'Framer Motion', 'JavaScript', 'Figma'],
     images: [
-      'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1522542550221-31fd19575a2d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&q=80',
-      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80',
+      '/Personal_P_HP.png',
+      '/Personal_P_WE.png',
+      '/Personal_P_AM.png',
     ],
     concept: 'This project was born from a desire to create a personal brand experience that feels both technically advanced and aesthetically grounded. I designed a grid-pattern interface inspired by the visual rhythm of math notebooks and digital sketchpads, symbolizing structured creativity.',
     process: 'The custom animated cursor and hover-triggered motion effects give users a sense of discovery as they navigate my work—an intentional nod to how curiosity drives both design and data science. The color palette—white, teal, walnut brown, and slate blue—was chosen to create a sense of balance between the modern digital world and natural calmness.',
@@ -42,10 +41,9 @@ const projectData: Record<string, any> = {
     date: 'May 2023',
     tags: ['JavaScript', 'Three.js', 'Blender', 'HTML', 'CSS'],
     images: [
-      'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&q=80',
-      'https://images.unsplash.com/photo-1618477388954-7852f32655ec?w=1200&q=80',
-      'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=1200&q=80',
-      'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80',
+      '/Personal_Portfolio_old_H.png',
+      '/Personal_Portfolio_old_O.png',
+      '/Personal_Portfolio_old_CM.png',
     ],
     concept: 'This project marked my first deep dive into 3D web design, where I wanted to break away from static layouts and instead build something alive and exploratory. Using Three.js and Blender, I designed a portfolio that feels like a 3D workspace—each element floating organically in space, symbolizing how creativity and structure coexist in technology.',
     process: 'The holographic animation aesthetic—soft gradients, glowing blue edges, and glass-like effects—was influenced by futuristic user interfaces seen in sci-fi design systems. My intent was to represent how technology feels tactile yet limitless. The interactive coding section allows users to drag elements and simulate code interactions.',
@@ -56,10 +54,9 @@ const projectData: Record<string, any> = {
     date: 'Jan 2025',
     tags: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit', 'Machine Learning'],
     images: [
-      'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1200&q=80',
-      'https://images.unsplash.com/photo-1593941707874-ef25b8b4a92b?w=1200&q=80',
+      '/Evision_D.png',
+      '/Evision_L.png',
       'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=1200&q=80',
-      'https://images.unsplash.com/photo-1609976351379-fc09e48aafc0?w=1200&q=80',
     ],
     concept: 'EVision emerged from my curiosity about how data science can solve real consumer problems. With so many EV models entering the market, buyers often struggle to find the right balance between price, range, and charging efficiency. My goal was to make this decision process transparent, interactive, and personalized.',
     process: 'I designed a weighted scoring algorithm that assigns importance to user-defined factors, achieving a 95% ranking precision. Using KMeans clustering, I categorized vehicles by their specifications, revealing market patterns that helped users understand trade-offs intuitively.',
@@ -207,6 +204,22 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             transition={{ delay: 0.4 }}
             className="space-y-12"
           >
+            {/* Video Section - Only for 3d-portfolio */}
+            {params.slug === '3d-portfolio' && (
+              <div className="border-l-2 border-[#1A7B7D] pl-8">
+                <h2 className="text-3xl font-light text-[#222222] mb-4">Project Video</h2>
+                <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-[#8B6F47]/20">
+                  <iframe
+                    src="https://www.youtube.com/embed/W2H5PaQu6F0"
+                    title="3D Portfolio Project Video"
+                    className="w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            )}
+
             {/* Concept */}
             <div className="border-l-2 border-[#1A7B7D] pl-8">
               <h2 className="text-3xl font-light text-[#222222] mb-4">Concept</h2>

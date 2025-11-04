@@ -20,7 +20,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Interactive Portfolio Website – Minimalist Personal Branding Platform',
     description: 'A sleek, minimalist personal portfolio website designed to present my projects and technical background through an interactive grid-based interface. Built with React, Tailwind, and Framer Motion, it blends clean digital minimalism with a calming natural palette.',
-    image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80',
+    image: '/Personal_P_HP.png',
     tags: ['React.js', 'TailwindCSS', 'Framer Motion', 'JavaScript', 'Figma'],
     slug: 'interactive-portfolio',
   },
@@ -36,7 +36,7 @@ const projects: Project[] = [
     id: 3,
     title: '3D-Interactive Personal Portfolio Website',
     description: 'A fully 3D interactive web portfolio built using Three.js and Blender, blending responsive holographic animations with immersive design. Visitors can explore my projects in a dynamic 3D space while interacting with draggable code elements.',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80',
+    image: '/Personal_Portfolio_old_H.png',
     tags: ['JavaScript', 'Three.js', 'Blender', 'HTML', 'CSS'],
     slug: '3d-portfolio',
   },
@@ -44,7 +44,7 @@ const projects: Project[] = [
     id: 4,
     title: 'EVision – Personalized Electric Vehicle Recommendation System',
     description: 'An intelligent EV recommendation engine that personalizes car suggestions based on cost, range, and charging preferences. By combining machine learning (KMeans clustering) with an interactive Streamlit dashboard, EVision simplifies the electric vehicle selection process.',
-    image: 'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&q=80',
+    image: '/Evision_D.png',
     tags: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit', 'Machine Learning'],
     slug: 'evision',
   },
@@ -78,12 +78,12 @@ export default function ProjectsSection() {
                 onClick={() => setSelectedProject(project)}
                 className="group cursor-interactive"
               >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border-2 border-transparent group-hover:border-[#1A7B7D]/30 transition-all duration-500">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border-2 border-transparent group-hover:border-[#1A7B7D]/30 transition-all duration-500">
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   
                   {/* Overlay on hover */}
