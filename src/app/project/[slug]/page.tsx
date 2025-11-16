@@ -43,7 +43,7 @@ const projectData: Record<string, any> = {
     title: 'F1Predict — Real-Time F1 Qualifying Prediction Engine',
     date: 'Nov 2025',
     tags: ['Python', 'Machine Learning', 'FastAPI', 'XGBoost', 'Pandas'],
-    images: ['/home_img_f1_pre.png', '/snd_img_f1_pre.png', '/trd_img_f1_pre.png', '/lst_img_f1_pre.png'],
+    images: ['/fst_img_f1_pre.png', '/home_img_f1_pre.png', '/snd_img_f1_pre.png', '/trd_img_f1_pre.png', '/lst_img_f1_pre.png'],
     concept: (
       <div className="space-y-4">
         <p>
@@ -369,7 +369,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             transition={{ delay: 0.2 }}
             className="mb-16"
           >
-            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-[#8B6F47]/20 mb-6">
+            <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-[#8B6F47]/20 mb-6 bg-[#F7F7F5]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentImageIndex}
@@ -383,7 +383,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                     src={project.images[currentImageIndex]}
                     alt={`${project.title} - Image ${currentImageIndex + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </motion.div>
               </AnimatePresence>
@@ -426,7 +426,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                       : 'border-gray-200 opacity-50 hover:opacity-100'
                   }`}
                 >
-                  <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-cover" />
+                  <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-contain" />
                 </button>
               ))}
             </div>
