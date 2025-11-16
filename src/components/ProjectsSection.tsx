@@ -10,7 +10,8 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  cardImage: string;
+  modalImage: string;
   tags: string[];
   slug: string;
 }
@@ -18,33 +19,41 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: 'F1Predict — Real-Time F1 Qualifying Prediction Engine',
+    description:
+      'An end-to-end model that forecasts F1 qualifying outcomes using live session data paired with multi-season historical performance. The system blends real-time telemetry, track conditions, team pace, tire behavior, and driver form to generate ranking predictions that update as qualifying unfolds.',
+    cardImage: '/Main_img_f1_pre.png',
+    modalImage: '/home_img_f1_pre.png',
+    tags: ['Python', 'Machine Learning', 'FastAPI', 'XGBoost', 'Pandas'],
+    slug: 'preipoconnect',
+  },
+  {
+    id: 2,
     title: 'Interactive Portfolio Website – Minimalist Personal Branding Platform',
-    description: 'A sleek, minimalist personal portfolio website designed to present my projects and technical background through an interactive grid-based interface. Built with React, Tailwind, and Framer Motion, it blends clean digital minimalism with a calming natural palette.',
-    image: '/Personal_P_HP.png',
+    description:
+      'A sleek, minimalist personal portfolio website designed to present my projects and technical background through an interactive grid-based interface. Built with React, Tailwind, and Framer Motion, it blends clean digital minimalism with a calming natural palette.',
+    cardImage: '/Personal_P_HP.png',
+    modalImage: '/Personal_P_HP.png',
     tags: ['React.js', 'TailwindCSS', 'Framer Motion', 'JavaScript', 'Figma'],
     slug: 'interactive-portfolio',
   },
   {
-    id: 2,
-    title: 'PreIPOConnect – AI-Based Pre-IPO Company Recommendation Chatbot',
-    description: 'An AI-powered chatbot that connects students and early-career professionals to promising pre-IPO companies aligned with their interests. Combining Flask, Twilio, and SendGrid, it delivers curated recommendations through a conversational SMS workflow.',
-    image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
-    tags: ['Python', 'Flask', 'Twilio API', 'SendGrid', 'Pandas'],
-    slug: 'preipoconnect',
-  },
-  {
     id: 3,
     title: '3D-Interactive Personal Portfolio Website',
-    description: 'A fully 3D interactive web portfolio built using Three.js and Blender, blending responsive holographic animations with immersive design. Visitors can explore my projects in a dynamic 3D space while interacting with draggable code elements.',
-    image: '/Personal_Portfolio_old_H.png',
+    description:
+      'A fully 3D interactive web portfolio built using Three.js and Blender, blending responsive holographic animations with immersive design. Visitors can explore my projects in a dynamic 3D space while interacting with draggable code elements.',
+    cardImage: '/Personal_Portfolio_old_H.png',
+    modalImage: '/Personal_Portfolio_old_H.png',
     tags: ['JavaScript', 'Three.js', 'Blender', 'HTML', 'CSS'],
     slug: '3d-portfolio',
   },
   {
     id: 4,
     title: 'EVision – Personalized Electric Vehicle Recommendation System',
-    description: 'An intelligent EV recommendation engine that personalizes car suggestions based on cost, range, and charging preferences. By combining machine learning (KMeans clustering) with an interactive Streamlit dashboard, EVision simplifies the electric vehicle selection process.',
-    image: '/Evision_D.png',
+    description:
+      'An intelligent EV recommendation engine that personalizes car suggestions based on cost, range, and charging preferences. By combining machine learning (KMeans clustering) with an interactive Streamlit dashboard, EVision simplifies the electric vehicle selection process.',
+    cardImage: '/Evision_D.png',
+    modalImage: '/Evision_D.png',
     tags: ['Python', 'Pandas', 'Scikit-learn', 'Streamlit', 'Machine Learning'],
     slug: 'evision',
   },
@@ -80,7 +89,7 @@ export default function ProjectsSection() {
               >
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white border-2 border-transparent group-hover:border-[#1A7B7D]/30 transition-all duration-500">
                   <Image
-                    src={project.image}
+                    src={project.cardImage}
                     alt={project.title}
                     fill
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
@@ -180,7 +189,7 @@ export default function ProjectsSection() {
                 {/* Right: Image */}
                 <div className="relative aspect-[3/4] rounded-xl overflow-hidden border border-[#8B6F47]/20">
                   <Image
-                    src={selectedProject.image}
+                    src={selectedProject.modalImage}
                     alt={selectedProject.title}
                     fill
                     className="object-cover"
