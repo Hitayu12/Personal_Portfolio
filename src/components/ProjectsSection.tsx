@@ -19,13 +19,23 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: 'FactorLab — Cross-Asset Factor Research & Backtesting Engine',
+    description:
+      "FactorLab is a reproducible, cross-asset factor research platform I'm building to keep signal testing honest. It includes versioned data ingestion, a monthly returns foundation, and a growing factor library (Trend / XsMom / LowVol) with leakage defenses like lookahead guards, alignment checks, and tests. I'm also using Celery to handle the heavier workloads—things like ingestion backfills, factor recomputes, and batch research runs—so the system can scale without turning into a mess. Next up is constraint-aware portfolio construction, transaction-cost backtesting, and an experiments + UI layer so it feels like a real research terminal.",
+    cardImage: '/coming-soon.svg',
+    modalImage: '/coming-soon.svg',
+    tags: ['Python', 'Quant Research', 'FastAPI', 'Celery', 'SQL', 'Docker', 'CI/CD', 'Testing'],
+    slug: 'preipoconnect',
+  },
+  {
+    id: 5,
     title: 'F1Predict — Real-Time F1 Qualifying Prediction Engine',
     description:
       'An end-to-end model that forecasts F1 qualifying outcomes using live session data paired with multi-season historical performance. The system blends real-time telemetry, track conditions, team pace, tire behavior, and driver form to generate ranking predictions that update as qualifying unfolds.',
     cardImage: '/Main_img_f1_pre.png',
     modalImage: '/home_img_f1_pre.png',
     tags: ['Python', 'Machine Learning', 'FastAPI', 'XGBoost', 'Pandas'],
-    slug: 'preipoconnect',
+    slug: 'f1predict',
   },
   {
     id: 2,
@@ -93,6 +103,7 @@ export default function ProjectsSection() {
                     alt={project.title}
                     fill
                     className="object-contain transition-transform duration-500 group-hover:scale-105"
+                    unoptimized={project.cardImage.endsWith('.svg')}
                   />
                   
                   {/* Overlay on hover */}
@@ -192,7 +203,8 @@ export default function ProjectsSection() {
                     src={selectedProject.modalImage}
                     alt={selectedProject.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
+                    unoptimized={selectedProject.modalImage.endsWith('.svg')}
                   />
                 </div>
               </div>

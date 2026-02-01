@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="1" fill="#1A7B7D" opacity="0.06"/>
+    </pattern>
+    <linearGradient id="tealGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A7B7D" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#1A7B7D" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="#F7F7F5"/>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <!-- Subtle teal gradient overlay -->
+  <rect width="800" height="600" fill="url(#tealGlow)"/>
+  <!-- Border -->
+  <rect x="1" y="1" width="798" height="598" fill="none" stroke="#8B6F47" stroke-width="2" stroke-opacity="0.2" rx="16"/>
+  <!-- Inner content area -->
+  <rect x="48" y="48" width="704" height="504" fill="none" stroke="#1A7B7D" stroke-width="1" stroke-opacity="0.15" rx="12"/>
+  <!-- Coming Soon text -->
+  <text x="400" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="300" fill="#222222" text-anchor="middle" letter-spacing="0.05em">Coming Soon</text>
+  <!-- Subtitle -->
+  <text x="400" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="400" fill="#708090" text-anchor="middle">Screenshots &amp; visuals in progress</text>
+  <!-- Teal accent line -->
+  <line x1="280" y1="370" x2="520" y2="370" stroke="#1A7B7D" stroke-width="2" stroke-opacity="0.4"/>
+</svg>

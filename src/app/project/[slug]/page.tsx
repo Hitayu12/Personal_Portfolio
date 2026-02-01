@@ -40,6 +40,182 @@ const projectData: Record<string, any> = {
     ),
   },
   'preipoconnect': {
+    title: 'FactorLab — Cross-Asset Factor Research & Backtesting Engine',
+    date: 'Jan 2026 - OnGoing',
+    tags: ['Python', 'Quant Research', 'FastAPI', 'Celery', 'SQL', 'Docker', 'CI/CD', 'Testing'],
+    images: ['/coming-soon.svg'],
+    concept: (
+      <div className="space-y-4">
+        <p>
+          Most quant &quot;backtests&quot; are quick to build—and easy to accidentally bias. I&apos;m
+          building FactorLab to make factor research feel more like real infrastructure:
+          reproducible inputs, standardized signal definitions, and guardrails that prevent silent
+          leakage.
+        </p>
+        <p>
+          The goal is a mini research terminal where you can go from data → signals → portfolios →
+          backtests with confidence that results are repeatable and defensible. It&apos;s API-first
+          (so it can power a UI later), and it&apos;s designed to scale into batch experiments and
+          large recomputations using Celery rather than turning into a fragile script pile.
+        </p>
+      </div>
+    ),
+    process: (
+      <div className="space-y-8">
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-[#222222]">
+            1. Data Engineering: Research-Grade Inputs (Ingestion + Versioning)
+          </h3>
+          <p>
+            I started by building the &quot;unsexy&quot; parts that make everything else trustworthy.
+          </p>
+          <div className="space-y-3">
+            <div>
+              <p className="font-semibold">Historical Data (Research-Ready)</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Asset universe seeding with consistent identifiers</li>
+                <li>Price ingestion workflow designed for repeatable runs</li>
+                <li>
+                  Dataset snapshot/versioning mindset so results are reproducible over time
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold">Returns Foundation</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Monthly returns pipeline as the canonical evaluation layer</li>
+                <li>Consistent frequency alignment to avoid hidden time-scale bugs</li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-2">
+            This layer is meant to answer: &quot;If someone reruns this in 3 months, will they get
+            the same result—and can we explain changes?&quot;
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-[#222222]">
+            2. Factor Engineering &amp; Research Core (Modular + Comparable)
+          </h3>
+          <p>
+            Next, I built a factor framework that&apos;s easy to extend but hard to misuse.
+          </p>
+          <div className="space-y-3">
+            <div>
+              <p className="font-semibold">Current Factor Families Implemented</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Trend</li>
+                <li>Cross-Sectional Momentum (XsMom)</li>
+                <li>Low Volatility (LowVol)</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold">Framework Design Choices</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Standardized factor interfaces so new signals plug in cleanly</li>
+                <li>
+                  Clear separation between data handling, signal computation, and evaluation
+                </li>
+                <li>
+                  Designed with cross-asset comparability in mind (not one-market hacks)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-2">
+            The main priority here is making it simple to add &quot;factor #4&quot; without rewriting
+            the platform.
+          </p>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-xl font-semibold text-[#222222]">
+            3. Production Workflow: Bias Controls + APIs + Orchestration
+          </h3>
+          <p>
+            This is the part that turns FactorLab from &quot;code that runs&quot; into &quot;research
+            you can trust.&quot;
+          </p>
+          <div className="space-y-3">
+            <div>
+              <p className="font-semibold">Research Safety (Leakage Defense)</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Lookahead-bias guards by construction</li>
+                <li>Alignment checks to prevent subtle timestamp leakage</li>
+                <li>
+                  Unit/regression tests that fail fast when research integrity is at risk
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold">API-First Backend (FastAPI)</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Endpoints to seed assets, ingest prices, and list factor metadata</li>
+                <li>
+                  Repeatable compute workflows that can later plug into a UI or experiment runner
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold">Scalable Compute (Celery — planned)</p>
+              <p className="mt-1">Designed to offload heavy jobs like:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>ingestion backfills</li>
+                <li>factor recomputes across larger universes</li>
+                <li>batch backtests / parameter sweeps</li>
+              </ul>
+              <p className="mt-2">
+                Keeps the system responsive and sets up the future experiments layer cleanly.
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold">Reproducibility</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Dockerized environment for consistent runs</li>
+                <li>CI checks to keep the repo stable as features expand</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+    outcome: (
+      <div className="space-y-4">
+        <p>
+          <strong>What FactorLab already does (today):</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            Research core is in place: ingestion/versioning, monthly returns, and a working factor
+            framework
+          </li>
+          <li>Trend / XsMom / LowVol are implemented with lookahead guards + tests</li>
+          <li>APIs exist for seeding assets, ingesting price data, and listing factors</li>
+          <li>
+            Docker + CI keep the project reproducible and &quot;runs clean&quot; like a real system
+          </li>
+        </ul>
+        <p>
+          <strong>What&apos;s next (immediately planned):</strong>
+        </p>
+        <ul className="list-disc pl-6 space-y-1">
+          <li>
+            Turn signals into real portfolios (constraints, turnover controls, rebalancing rules)
+          </li>
+          <li>Add transaction-cost-aware backtesting (slippage/cost assumptions)</li>
+          <li>Build experiment orchestration (Celery) + tracking + reporting/exports</li>
+          <li>Ship a UI layer so it feels like an end-to-end research terminal</li>
+        </ul>
+        <p>
+          <strong>Quick takeaway:</strong> FactorLab isn&apos;t just about testing strategies—it&apos;s
+          about building the infrastructure that makes systematic research reproducible,
+          bias-aware, and scalable.
+        </p>
+      </div>
+    ),
+  },
+  'f1predict': {
     title: 'F1Predict — Real-Time F1 Qualifying Prediction Engine',
     date: 'Nov 2025',
     tags: ['Python', 'Machine Learning', 'FastAPI', 'XGBoost', 'Pandas'],
@@ -71,7 +247,7 @@ const projectData: Record<string, any> = {
           </li>
         </ul>
         <p>
-          The goal wasn’t just accuracy — it was to build a{' '}
+          The goal wasn&apos;t just accuracy — it was to build a{' '}
           <strong>fast, production-style tool</strong> that stays useful during actual race
           weekends.
         </p>
@@ -99,7 +275,7 @@ const projectData: Record<string, any> = {
               </ul>
               <p className="mt-2">
                 This allowed the model to learn long-term patterns: who is typically strong at
-                Monaco, who struggles at Suzuka, how teams’ pace changes between seasons, etc.
+                Monaco, who struggles at Suzuka, how teams&apos; pace changes between seasons, etc.
               </p>
             </div>
             <div>
@@ -114,7 +290,7 @@ const projectData: Record<string, any> = {
               </ul>
               <p className="mt-2">
                 I designed a preprocessing system that automatically detects whether a lap is
-                “clean” or “traffic-affected” to avoid misleading the model.
+                &quot;clean&quot; or &quot;traffic-affected&quot; to avoid misleading the model.
               </p>
             </div>
           </div>
@@ -138,7 +314,7 @@ const projectData: Record<string, any> = {
             <li>
               <strong>Circuit-specific driver pace index</strong>{' '}
               <span className="block text-sm">
-                (Driver’s normalized performance at each track)
+                (Driver&apos;s normalized performance at each track)
               </span>
             </li>
             <li>
@@ -194,7 +370,7 @@ const projectData: Record<string, any> = {
             <li>Confidence interval widening when data is sparse</li>
           </ul>
           <p className="mt-2">
-            These production touches make the system feel reliable and “race-ready.”
+            These production touches make the system feel reliable and &quot;race-ready.&quot;
           </p>
         </div>
       </div>
@@ -384,6 +560,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                     alt={`${project.title} - Image ${currentImageIndex + 1}`}
                     fill
                     className="object-contain"
+                    unoptimized={project.images[currentImageIndex]?.endsWith('.svg')}
                   />
                 </motion.div>
               </AnimatePresence>
@@ -426,7 +603,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                       : 'border-gray-200 opacity-50 hover:opacity-100'
                   }`}
                 >
-                  <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-contain" />
+                  <Image src={image} alt={`Thumbnail ${index + 1}`} fill className="object-contain" unoptimized={image?.endsWith('.svg')} />
                 </button>
               ))}
             </div>

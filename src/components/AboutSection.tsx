@@ -142,7 +142,7 @@ export default function AboutSection() {
               {/* PDF Viewer */}
               <div className="w-full h-full overflow-auto p-8">
                 <iframe
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/document-uploads/Resume-1760682313849.pdf"
+                  src="/resume.pdf"
                   className="w-full h-full border-0"
                   title="Resume"
                 />
