@@ -57,22 +57,23 @@ export default function AboutSection() {
                 <h2 className="text-5xl font-light text-[#222222] mb-6">About Me</h2>
                 <div className="space-y-4 text-[#708090] leading-relaxed">
                   <p>
-                    I'm Hitayu Parikh, a Data Science student at Rutgers University pursuing a 
-                    Bachelor of Science with a CS-track and a minor in Business Administration. 
-                    As a Dean's List scholar and DTPLC Scholar, I'm passionate about leveraging 
-                    data and technology to create meaningful solutions.
+                    Hi, I&apos;m Hitayu Parikh. I&apos;m a student at Rutgers University studying Data
+                    Science (Computer Science track) and Business Administration on the side.
+                    I’m fascinated by how data, strategy, and risk shape decisions in
+                    high-pressure environments. I enjoy building systems that turn uncertainty
+                    into structured insight and measurable performance.
                   </p>
                   <p>
-                    With experience in web development from my internship at SterSoft Solutions 
-                    and a strong foundation in programming languages like Python, Java, and JavaScript, 
-                    I bridge the gap between data science and practical application development. 
-                    My projects range from building interactive 3D portfolio websites to developing 
-                    AI-powered recommendation systems.
+                    I’m a big Formula 1 fan, and I follow tennis closely. I love the intensity,
+                    the strategy, and how small moments can shift everything. Watching how teams
+                    and athletes prepare, adapt, and compete has shaped the way I think about
+                    focus, discipline, and growth.
                   </p>
                   <p>
-                    I'm excited about applying machine learning techniques to solve real-world problems 
-                    and continuously expanding my skills in data analysis, visualization, and 
-                    software engineering.
+                    Outside of school and projects, I train for long-distance races. Running
+                    keeps me grounded and reminds me that progress comes from consistency. I’m
+                    always excited to learn, build, and connect with people who care about
+                    getting better every day.
                   </p>
                 </div>
               </motion.div>
