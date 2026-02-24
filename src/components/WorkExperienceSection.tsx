@@ -16,6 +16,36 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
+    role: 'Quantitative Research Team Member',
+    company: 'Rutgers Quantitative Finance Club',
+    location: 'New Brunswick, NJ',
+    period: 'Spring 2026',
+    responsibilities: [
+      'Selected from a competitive applicant pool to join a 3-person research cohort conducting a 12+ week quantitative study on systematic options-based trading strategies',
+      'Reproduced and backtested an academic options framework across multi-year historical datasets, analyzing return distributions, maximum drawdown, volatility, and risk-adjusted performance metrics',
+      'Designed and implemented structured backtesting pipelines in a collaborative GitHub environment, iterating through multiple parameter configurations to evaluate robustness and stability',
+      'Applied statistical analysis to assess performance sensitivity under varying market conditions and stress scenarios',
+      'Delivered a formal research paper and final presentation summarizing methodology, implementation process, empirical findings, and strategic implications',
+    ],
+    techStack: ['Python','Pandas', 'NumPy', 'Backtesting', 'Quantitative Analysis', 'Statistical Modeling', 'Options Strategies', 'Risk Metrics', 'Git'],
+  },
+  {
+    id: 2,
+    role: 'STEM / STEAM Instructor',
+    company: 'Snapology of Monmouth County & Edison',
+    location: 'Edison, NJ',
+    period: 'Present',
+    responsibilities: [
+      'Delivered hands-on STEM/STEAM instruction to students through project-based learning sessions',
+      'Led small-group classes of up to 10 students per session, adapting instruction to varying skill levels and learning styles',
+      'Explained problem-solving and technical concepts in clear, age-appropriate ways to strengthen comprehension and engagement',
+      'Managed end-to-end session execution including preparation, materials coordination, pacing, and classroom organization',
+      'Fostered a structured and supportive learning environment that encouraged collaboration, creativity, and active participation',
+    ],
+    techStack: ['STEM Education', 'STEAM Instruction', 'Youth Mentorship', 'Classroom Management', 'Leadership', 'Communication'],
+  },
+  {
+    id: 3,
     role: 'Web Development Intern',
     company: 'SterSoft Solutions Pvt Ltd',
     location: 'Vadodara, Gujarat, India (Remote)',
@@ -31,7 +61,7 @@ const experiences: Experience[] = [
     techStack: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'APIs', 'CMS', 'Payment Gateway', 'UI/UX', 'Git'],
   },
   {
-    id: 2,
+    id: 4,
     role: 'Client Engagement and Operational Workflow Optimization Specialist',
     company: 'Hollister Co. (Abercrombie & Fitch Co.)',
     location: 'Edison, NJ',

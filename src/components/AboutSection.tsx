@@ -41,7 +41,7 @@ export default function AboutSection() {
                   src="/me.jpg"
                   alt="Hitayu Parikh"
                   fill
-                  className="object-cover"
+                  className="object-cover object-center scale-115"
                 />
               </div>
             </motion.div>
