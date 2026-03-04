@@ -404,6 +404,98 @@ const projectData: Record<string, any> = {
       </div>
     ),
   },
+  'signalforge': {
+    title: 'SignalForge: Failure Intelligence Studio',
+    date: 'Mar 2026',
+    tags: [
+      'Python',
+      'Streamlit',
+      'Pandas',
+      'scikit-learn',
+      'yfinance',
+      'Tavily API',
+      'Groq API',
+      'IBM watsonx.ai',
+      'Plotly',
+    ],
+    images: [
+      '/SF_Picture1.png',
+      '/SF_Picture2.png',
+      '/SF_Picture3.png',
+      '/SF_Picture4.png',
+      '/SF_Picture5.png',
+      '/SF_Picture6.png',
+    ],
+    videoUrl: 'https://www.youtube.com/embed/rjsCfGC8KqU',
+    videoTitle: 'SignalForge Project Video',
+    concept: (
+      <div className="space-y-4">
+        <p>
+          I built SignalForge to move beyond static risk dashboards and create a true investigation
+          workflow. The goal was to treat each company as a forensic case: verify distress status,
+          collect external evidence, quantify financial pressure, compare against survivor peers,
+          and produce a prevention-focused explanation that is understandable to both technical and
+          non-technical users.
+        </p>
+        <p>
+          SignalForge combines forensic analysis, survivor benchmarking, and counterfactual
+          simulation to explain why a company failed and what actions could have reduced collapse
+          risk.
+        </p>
+      </div>
+    ),
+    process: (
+      <div className="space-y-4">
+        <p>
+          I engineered a 10-step end-to-end pipeline spanning ingest, analysis, reasoning, and
+          reporting. The system starts by resolving company input and pulling profile plus statement
+          data from Yahoo Finance, then computes 12+ normalized financial metrics including
+          leverage, liquidity, cash burn, growth, and margin signals.
+        </p>
+        <p>
+          On the qualitative side, I integrated 7 Tavily evidence channels (failure check, macro,
+          micro, industry, news, qualitative, and strategy context), mapped every snippet to
+          citation IDs, and enforced citation-linked outputs in downstream reasoning.
+        </p>
+        <p>
+          For the modeling layer, I built a collaborative 4-stage reasoning council with 3 systems:
+          Groq draft generation, watsonx critique/review, and a local quantitative sanity model
+          before final synthesis. The critique stage explicitly separates supported claims,
+          unsupported claims, missing factors, and rewrite suggestions, while synthesis merges
+          outputs into one consensus JSON contract with disagreements and overall confidence.
+        </p>
+        <p>
+          I added strict structured-output controls (JSON schema prompting, markdown-fence cleanup,
+          parse-repair retry loops, and provider-level failover) so the pipeline stays stable under
+          malformed responses or intermittent API errors. For reliability, I added provider
+          telemetry, caching keyed by company/ticker/failure-year, external timeout boundaries, and
+          graceful degradation so partial outages do not break reporting.
+        </p>
+        <p>
+          In the UI, I implemented 7 analysis/report tabs, including Council Output and Council
+          Trace, to make multi-agent reasoning transparent instead of black-box. I also added
+          scenario controls and report Q&A so users can interactively stress-test conclusions.
+        </p>
+      </div>
+    ),
+    outcome: (
+      <div className="space-y-4">
+        <p>
+          The final platform produces evidence-cited failure narratives with quantitative backing,
+          disagreement tracking, and simulation-driven recommendations in one interactive interface.
+        </p>
+        <p>
+          A typical run now unifies 3 reasoning systems, 7 evidence channels, 12+ financial
+          signals, and 10 pipeline stages into a single analyst-ready output.
+        </p>
+        <p>
+          This project strengthened my ability to design reliable multi-agent AI systems, enforce
+          structured reasoning contracts, and deliver explainable decision products at
+          production-style quality.
+        </p>
+      </div>
+    ),
+  },
   '3d-portfolio': {
     title: '3D-Interactive Personal Portfolio Website',
     date: 'May 2023',
@@ -413,6 +505,8 @@ const projectData: Record<string, any> = {
       '/Personal_Portfolio_old_O.png',
       '/Personal_Portfolio_old_CM.png',
     ],
+    videoUrl: 'https://www.youtube.com/embed/W2H5PaQu6F0',
+    videoTitle: '3D Portfolio Project Video',
     concept: (
       <p>
         This project marked my first deep dive into 3D web design, where I wanted to break away from
@@ -616,14 +710,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             transition={{ delay: 0.4 }}
             className="space-y-12"
           >
-            {/* Video Section - Only for 3d-portfolio */}
-            {params.slug === '3d-portfolio' && (
+            {/* Video Section */}
+            {project.videoUrl && (
               <div className="border-l-2 border-[#1A7B7D] pl-8">
                 <h2 className="text-3xl font-light text-[#222222] mb-4">Project Video</h2>
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden border border-[#8B6F47]/20">
                   <iframe
-                    src="https://www.youtube.com/embed/W2H5PaQu6F0"
-                    title="3D Portfolio Project Video"
+                    src={project.videoUrl}
+                    title={project.videoTitle ?? `${project.title} Project Video`}
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

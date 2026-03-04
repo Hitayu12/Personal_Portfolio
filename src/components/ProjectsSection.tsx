@@ -18,6 +18,26 @@ interface Project {
 
 const projects: Project[] = [
   {
+    id: 6,
+    title: 'SignalForge: Failure Intelligence Studio',
+    description:
+      'A full-stack failure intelligence platform that investigates distressed companies using financial signals, web evidence, and collaborative AI reasoning. SignalForge combines forensic analysis, survivor benchmarking, and counterfactual simulation to explain why a company failed and what actions could have reduced collapse risk.',
+    cardImage: '/SF_Picture1.png',
+    modalImage: '/SF_Picture1.png',
+    tags: [
+      'Python',
+      'Streamlit',
+      'Pandas',
+      'scikit-learn',
+      'yfinance',
+      'Tavily API',
+      'Groq API',
+      'IBM watsonx.ai',
+      'Plotly',
+    ],
+    slug: 'signalforge',
+  },
+  {
     id: 1,
     title: 'FactorLab — Cross-Asset Factor Research & Backtesting Engine',
     description:
