@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import CustomCursor from '@/components/CustomCursor';
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -10,6 +11,19 @@ import SocialSidebar from '@/components/SocialSidebar';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  useEffect(() => {
+    if (window.location.pathname !== '/') return;
+
+    // Prevent browser history restoration from reopening mid-page.
+    const previousScrollRestoration = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
+    return () => {
+      window.history.scrollRestoration = previousScrollRestoration;
+    };
+  }, []);
+
   return (
     <>
       <CustomCursor />
