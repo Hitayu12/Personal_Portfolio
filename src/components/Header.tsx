@@ -1,15 +1,23 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type MouseEvent } from 'react';
 import { motion, useScroll } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { smoothScrollToId } from '@/lib/smoothScroll';
 
 export default function Header() {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
   const pathname = usePathname();
+
+  const handleSectionClick =
+    (sectionId: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+      if (pathname !== '/') return;
+      event.preventDefault();
+      smoothScrollToId(sectionId, 900, 24);
+    };
 
   useEffect(() => {
     let lastScrollY = 0;
@@ -54,6 +62,7 @@ export default function Header() {
         <nav className="flex items-center gap-12">
           <Link
             href="/#projects"
+            onClick={handleSectionClick('projects')}
             className="font-mono text-sm tracking-wider transition-all relative text-[#222222]/70 hover:text-[#222222] group"
           >
             PROJECTS
@@ -63,7 +72,8 @@ export default function Header() {
             />
           </Link>
           <Link
-            href="/#work"
+            href="/#experience"
+            onClick={handleSectionClick('experience')}
             className="font-mono text-sm tracking-wider transition-all relative text-[#222222]/70 hover:text-[#222222] group"
           >
             WORK
@@ -74,6 +84,7 @@ export default function Header() {
           </Link>
           <Link
             href="/#about"
+            onClick={handleSectionClick('about')}
             className="font-mono text-sm tracking-wider transition-all relative text-[#222222]/70 hover:text-[#222222] group"
           >
             ABOUT ME

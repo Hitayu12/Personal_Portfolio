@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
+import { smoothScrollToId } from '@/lib/smoothScroll';
 
 export default function HeroSection() {
   const scrollToWork = () => {
-    const workSection = document.getElementById('work');
-    workSection?.scrollIntoView({ behavior: 'smooth' });
+    smoothScrollToId('experience', 900, 24);
   };
 
   return (
